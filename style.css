@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+}
+
+h1 {
+    color: #764ba2;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.score {
+    font-size: 1.5em;
+    color: #667eea;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.game-area {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(180deg, #87CEEB 0%, #98FB98 100%);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 5px solid #764ba2;
+}
+
+.bird {
+    position: absolute;
+    font-size: 3em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0px);
+    }
+    50% {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}
+
+.bird:hover {
+    transform: translate(-50%, -50%) scale(1.2) rotate(15deg);
+}
+
+.message {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    color: #764ba2;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reset-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    
+    .game-area {
+        height: 300px;
+    }
+    
+    .bird {
+        font-size: 2.5em;
+    }
+}
